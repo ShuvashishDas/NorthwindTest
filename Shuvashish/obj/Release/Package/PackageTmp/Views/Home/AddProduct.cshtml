@@ -1,0 +1,85 @@
+﻿@using Shuvashish.Core.Model
+@model ProductModel
+
+@{
+    ViewBag.Title = "Add new product";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Add New Product</h2>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.QuantityPerUnit)
+                @Html.TextBoxFor(m => m.QuantityPerUnit, new { @class = "form-control", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UnitPrice)
+                @Html.TextBoxFor(m => m.UnitPrice, new { @class = "form-control", required = "required" })
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Category)
+                <select class="form-control" id="categorySelector" name="categorySelector" required="required">
+                    <option></option>
+                    @{
+                        var catId = Model != null ? (Model.Category != null ? Model.Category.Id : -1) : -1;
+                        var categories = (List<CategoryModel>) ViewData["categories"];
+                        foreach (var category in categories)
+                        {
+                            var isSelected = (category.Id == catId) ? "selected" : string.Empty;
+                            <option value="@category.Id" @isSelected>@category.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ReorderLevel)
+                @Html.TextBoxFor(m => m.ReorderLevel, new { @class = "form-control", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UnitsOnOrder)
+                @Html.TextBoxFor(m => m.UnitsOnOrder, new { @class = "form-control", required = "required" })
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Supplier)
+                <select class="form-control" id="supplierSelector" name="supplierSelector" required="required">
+                    <option></option>
+                    @{
+                        var supId = Model != null ? (Model.Supplier != null ? Model.Supplier.Id : -1) : -1;
+                        var suppliers = (List<SupplierModel>)ViewData["suppliers"];
+                        foreach (var supplier in suppliers)
+                        {
+                            var isSelected = (supplier.Id == supId) ? "selected" : string.Empty;
+                            <option value="@supplier.Id" @isSelected>@supplier.Name</option>
+                        }
+                    }
+                </select>
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UnitsInStock)
+                @Html.TextBoxFor(m => m.UnitsInStock, new { @class = "form-control", required = "required" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-success">Add Product</button>
+        </div>
+    </div>
+}

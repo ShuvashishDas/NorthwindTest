@@ -1,0 +1,55 @@
+﻿@using Shuvashish.Core.Model
+
+@model ProductModel
+@{
+    ViewBag.Title = "Product Details: " + @Model.Name;
+}
+
+<h2>@Model.Name</h2>
+@Html.Label(@Model.Discontinued ? "This item is currently Discontinued" : string.Empty, new { @class = "text-danger" })
+<br /><br /><br />
+<div class="row">
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.Category)
+        @Model.Category.Name
+    </div>
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.Supplier)
+        @Model.Supplier.Name
+    </div>
+    <div class="col-xs-4 form-group">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.UnitPrice)
+        @Html.Encode(@Model.UnitPrice)
+    </div>
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.UnitsInStock)
+        @Html.Encode(@Model.UnitsInStock)
+    </div>
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.UnitsOnOrder)
+        @Html.Encode(@Model.UnitsOnOrder)
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.QuantityPerUnit)
+        @Html.Encode(@Model.QuantityPerUnit)
+    </div>
+    <div class="col-xs-4 form-group">
+        @Html.LabelFor(m => m.ReorderLevel)
+        @Html.Encode(@Model.ReorderLevel)
+    </div>
+    <div class="col-xs-4 form-group">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <a href=@Url.Action("EditProduct", "Home", new { id=@Model.Id }) class="btn btn-primary btn-large">
+            Edit this product
+        </a>
+    </div>
+</div>

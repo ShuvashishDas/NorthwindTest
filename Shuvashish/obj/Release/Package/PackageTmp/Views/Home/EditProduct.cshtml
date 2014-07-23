@@ -1,0 +1,132 @@
+﻿@using Shuvashish.Core.Model
+@model ProductModel
+@{
+    ViewBag.Title = "Edit Product";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Product Details: @Model.Name</h2>
+    </div>
+</div>
+<br /><br />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new {@class = "product-edit form-control", required = "required"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.QuantityPerUnit)
+                @Html.TextBoxFor(m => m.QuantityPerUnit, new {@class = "product-edit form-control", required = "required"})
+            </div>
+            <div class="form-group">
+                @{var formated = String.Format("{0:0.00}", Model.UnitPrice);}
+                @Html.LabelFor(m => m.UnitPrice)
+                @Html.TextBoxFor(m => m.UnitPrice, formated, new {@class = "product-edit form-control", required = "required"})
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Category)
+                <select class="product-edit form-control" id="categorySelector" name="categorySelector" required="required">
+                    <option></option>
+                    @{
+                        var catId = Model != null ? (Model.Category != null ? Model.Category.Id : -1) : -1;
+                        var categories = (List<CategoryModel>) ViewData["categories"];
+                        foreach (var category in categories)
+                        {
+                            var isSelected = (category.Id == catId) ? "selected" : string.Empty;
+                            <option value="@category.Id" @isSelected>@category.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ReorderLevel)
+                @Html.TextBoxFor(m => m.ReorderLevel, new {@class = "product-edit form-control", required = "required"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UnitsOnOrder)
+                @Html.TextBoxFor(m => m.UnitsOnOrder, new {@class = "product-edit form-control", required = "required"})
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Supplier)
+                <select class="product-edit form-control" id="supplierSelector" name="supplierSelector" required="required">
+                    <option></option>
+                    @{
+                        var supId = Model != null ? (Model.Supplier != null ? Model.Supplier.Id : -1) : -1;
+                        var suppliers = (List<SupplierModel>) ViewData["suppliers"];
+                        foreach (var supplier in suppliers)
+                        {
+                            var isSelected = (supplier.Id == supId) ? "selected" : string.Empty;
+                            <option value="@supplier.Id" @isSelected>@supplier.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UnitsInStock)
+                @Html.TextBoxFor(m => m.UnitsInStock, new {@class = "product-edit form-control", required = "required"})
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CheckBoxFor(m => m.Discontinued, new {@id = "discontinuedProduct"}) @Html.LabelFor(m => m.Discontinued)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <br />
+            <button type="button" id="EditProduct" class="btn btn-success">Edit Product</button>
+            <button type="submit" id="UpdateProduct" class="btn btn-success" >Update Product</button>
+            <button type="button" id="CancelEdit" class="btn btn-info">Cancel Edit</button>
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(window).load(function() {
+                setReadonlyMode();
+            });
+
+            $('#EditProduct').click(function() {
+                setEditMode();
+            });
+            $('#CancelEdit').click(function() {
+                setReadonlyMode();
+            });
+
+            function setReadonlyMode() {
+                $(".product-edit").attr('readonly', true);
+                $("#categorySelector").attr('disabled', 'disabled');
+                $("#categorySelector").attr('disabled', 'disabled');
+                $("#discontinuedProduct").attr('disabled', 'disabled');
+                $("#UpdateProduct").hide();
+                $("#CancelEdit").hide();
+                $("#EditProduct").show();
+            }
+
+            function setEditMode() {
+                $(".product-edit").attr('readonly', false);
+                $("#categorySelector").attr('disabled', false);
+                $("#categorySelector").attr('disabled', false);
+                $("#discontinuedProduct").attr('disabled', false);
+                $("#UpdateProduct").show();
+                $("#CancelEdit").show();
+                $("#EditProduct").hide();
+            }
+
+        });
+    </script>
+}

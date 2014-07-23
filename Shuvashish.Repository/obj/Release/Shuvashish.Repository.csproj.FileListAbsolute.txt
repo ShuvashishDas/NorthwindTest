@@ -1,0 +1,10 @@
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\Shuvashish.Repository.dll.config
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\Shuvashish.Repository.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\Shuvashish.Repository.pdb
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\EntityFramework.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\EntityFramework.xml
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\obj\Release\Shuvashish.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\obj\Release\Shuvashish.Repository.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Repository\obj\Release\Shuvashish.Repository.pdb

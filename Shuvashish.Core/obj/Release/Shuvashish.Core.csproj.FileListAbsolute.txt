@@ -1,0 +1,15 @@
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\AutoMapper.Net4.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\Shuvashish.Core.dll.config
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\Shuvashish.Core.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\Shuvashish.Core.pdb
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\AutoMapper.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\EntityFramework.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\Shuvashish.Repository.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\Shuvashish.Repository.pdb
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\AutoMapper.xml
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\EntityFramework.xml
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\obj\Release\Shuvashish.Core.csprojResolveAssemblyReference.cache
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\obj\Release\Shuvashish.Core.dll
+C:\Users\Mrinmoy\Documents\Visual Studio 2013\Projects\NorthWindWebApp\Shuvashish.Core\obj\Release\Shuvashish.Core.pdb
